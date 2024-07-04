@@ -14,7 +14,7 @@ import com.bd.basico.servicio.IProductoServicio;
 import org.springframework.ui.Model;
 
 @Controller
-@RequestMapping("/vistas")
+@RequestMapping("/Vistas")
 public class ProductoControlador {
 	// inyeccion de dependencia...
 
@@ -32,7 +32,7 @@ public class ProductoControlador {
 		modelo.addAttribute("listado", listado);
 		// retornamos
 
-		return "/Vistas/ListadoAuto";
+		return "/Vistas/ListadoProducto";
 
 	} // fin del metodo listado auto...
 	// creamos los respectivos para metodos para registrar...
@@ -43,7 +43,7 @@ public class ProductoControlador {
 		// enviamos a la vista...
 		modelo.addAttribute("regproducto", producto);
 		// retornamos
-		return "/Vistas/FrmCrearCliente";
+		return "/Vistas/FrmCrearProducto";
 	} // fin del metodo registrar.
 	// realizamos el mapeo con postmapping
 	@PostMapping("/GuardarProducto")
@@ -51,7 +51,7 @@ public class ProductoControlador {
 		iproductoservicio.RegistrarProducto(producto);
 		System.out.println("dato registrado en la bd");
 		// retornamos al listado...
-		return "redirect:/Vistas/ListadoClientes";
+		return "redirect:/Vistas/ListadoProducto";
 	} // fin del metodo string...
 	// *****************crearmos el metodo editar...
 	@GetMapping("/editar/{id}")
@@ -71,6 +71,6 @@ public class ProductoControlador {
 		// enviamos a la vista
 		modelo.addAttribute("listado", listado);
 		// redireccionamos
-		return "redirect:/Vistas/ListadoClientes";
+		return "redirect:/Vistas/ListadoProducto";
 	} // fin del metodo eliminar...
 }

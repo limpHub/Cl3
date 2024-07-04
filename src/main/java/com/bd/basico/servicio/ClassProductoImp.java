@@ -3,10 +3,11 @@ package com.bd.basico.servicio;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.bd.basico.modelo.TBL_PRODUCTOCL3;
 import com.bd.basico.repositorio.IProductoRepositorio;
-
+@Service
 public class ClassProductoImp implements IProductoServicio {
 	@Autowired
 	private IProductoRepositorio iproductorepository;
